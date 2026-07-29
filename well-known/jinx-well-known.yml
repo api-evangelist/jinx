@@ -1,0 +1,21 @@
+generated: '2026-07-19'
+method: searched
+source: https://thinkjinx.com/.well-known/
+host: https://thinkjinx.com
+note: >-
+  Jinx runs on Shopify; the OIDC/OAuth discovery documents describe this store's
+  Shopify Customer Account API authentication issuer (shop id 27716059229). They
+  are served live by the storefront and captured here verbatim.
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: jinx-openid-configuration.json
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: jinx-oauth-authorization-server.json
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
