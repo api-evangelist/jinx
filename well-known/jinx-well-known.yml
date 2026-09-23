@@ -2,20 +2,26 @@ generated: '2026-07-19'
 method: searched
 source: https://thinkjinx.com/.well-known/
 host: https://thinkjinx.com
-note: >-
-  Jinx runs on Shopify; the OIDC/OAuth discovery documents describe this store's
-  Shopify Customer Account API authentication issuer (shop id 27716059229). They
-  are served live by the storefront and captured here verbatim.
-documents:
-- path: /.well-known/openid-configuration
-  status: 200
-  file: jinx-openid-configuration.json
-- path: /.well-known/oauth-authorization-server
-  status: 200
-  file: jinx-oauth-authorization-server.json
-- path: /.well-known/security.txt
-  status: 404
-- path: /.well-known/api-catalog
-  status: 404
-- path: /.well-known/ai-plugin.json
-  status: 404
+note: Jinx runs on Shopify; the OIDC/OAuth discovery documents describe this store's Shopify Customer
+  Account API authentication issuer (shop id 27716059229). They are served live by the storefront and
+  captured here verbatim.
+hosts:
+- host: https://thinkjinx.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: jinx-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: jinx-oauth-authorization-server.json
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
